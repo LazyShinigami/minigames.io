@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ttt.css">
+    <link rel="stylesheet" href="/navBar.css">
+    <title>Tic-Tac-Toe</title>
+</head>
+<body id="body" style="background-color: white;">
+    <nav class="navBar" id="navBar">
+        <div class="options">
+            <a href="/home/index.html"><img id="homeIcon" src="/imagesMain/home.jpg" alt="home icon"></a>
+
+            <div id="dayNightSwitch">
+                <input type="checkbox" class="checkbox" id="checkbox">
+                <label for="checkbox" class="label">
+                    <span class="ball"></span>
+                </label>
+            </div>
+
+        </div>
+        
+
+        <div class="heading ">TIC-TAC-TOE!</div>
+
+
+        <div class="dropdown" data-dropdown>
+            <button class="rules" data-dropdownButton>Rules</button>
+            <div class="dropdownContent">
+                <li>Enter names of both players. Hit "save" to begin game.</li>
+                <li>Await your turn.</li>
+                <li>Choose a tile to claim it.</li>
+                <li>Claim 3 tiles in a line to win.</li>
+            </div>
+        </div>
+        
+    </nav>
+
+
+
+
+
+
+    
+    <div class="main">
+        <div class="scoreBoard">Score Board
+            <div class="playerX">Player 1 <img src="images/x.jpeg" alt="x icon" id="xIcon"><span class="scoreX">0</span> </div>
+            <div class="playerO">Player 2 <img src="images/o.jpeg" alt="o icon" id="oIcon"><span class="scoreO">0</span> </div>
+        </div>
+    
+        <div class="board" id="board">
+            <div class="cell" id="0" data-cell></div>
+            <div class="cell" id="1" data-cell></div>
+            <div class="cell" id="2" data-cell></div>
+            <div class="cell" id="3" data-cell></div>
+            <div class="cell" id="4" data-cell></div>
+            <div class="cell" id="5" data-cell></div>
+            <div class="cell" id="6" data-cell></div>
+            <div class="cell" id="7" data-cell></div>
+            <div class="cell" id="8" data-cell></div>
+        </div>
+    
+        
+        <div id="winningText"></div>
+
+    </div>
+
+    
+    <!-- <div id="dayNightSwitch">
+        <input type="checkbox" class="checkbox" id="checkbox">
+        <label for="checkbox" class="label">
+            <span class="ball"></span>
+        </label>
+    </div> -->
+
+    <script src="ttt.js"></script>
+    <script src="/navBar.js"></script>
+</body>
+</html>

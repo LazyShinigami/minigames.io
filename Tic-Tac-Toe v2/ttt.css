@@ -1,0 +1,283 @@
+:root {
+    --cellSize: 6rem;
+    --markSize: 5rem;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    padding: 0 1rem;
+}
+
+.board {
+    width: 18rem;
+    height: 18rem;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(3, auto);
+    justify-items: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.068);
+    transition: 300ms;
+    box-shadow: 8px 8px 30px 5px black;
+}
+
+.cell {
+    width: var(--cellSize);
+    height: var(--cellSize);
+    border: 3px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 4px 4px 9px black;
+}
+
+.cell:nth-child(1),
+.cell:nth-child(2),
+.cell:nth-child(3) {
+    border-top: none;
+}
+
+.cell:nth-child(3n+1) {
+    border-left: none;
+}
+
+.cell:nth-child(3n+3) {
+    border-right: none;
+}
+
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9) {
+    border-bottom: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* The X */
+.cell.x::before,
+.cell.x::after {
+    content: '';
+    position: absolute;
+    border: 2px solid black;
+    border-radius: 6px;
+    height: var(--markSize);
+    width: calc(var(--markSize) * 0.15);
+    background-color: rgb(0, 255, 255);
+}
+
+.board.x .cell:not(.x):not(.o):hover::before,
+.board.x .cell:not(.x):not(.o):hover::after {
+    content: '';
+    position: absolute;
+    border: 0.5px solid black;
+    border-radius: 6px;
+    height: var(--markSize);
+    width: calc(var(--markSize) * 0.15);
+    background-color: rgb(0, 255, 255);
+    opacity: 0.5;
+}
+
+.cell.x::before,
+.board.x .cell:not(.x):not(.o):hover::before {
+    transform: rotate(45deg);
+}
+
+.board.x .cell:not(.x):not(.o):hover::before,
+.board.x .cell:not(.x):not(.o):hover::after {
+    background-color: rgb(223, 223, 223)
+}
+
+.cell.x::after,
+.board.x .cell:not(.x):not(.o):hover::after {
+    transform: rotate(-45deg);
+}
+
+
+
+
+
+
+
+
+/* The O */
+.cell.o::before,
+.cell.o::after {
+    content: '';
+    border: 2px solid black;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.board.o .cell:not(.x):not(.o):hover::before,
+.board.o .cell:not(.x):not(.o):hover::after {
+    content: '';
+    border: 1px solid black;
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.cell.o::before,
+.board.o .cell:not(.x):not(.o):hover::before {
+    height: var(--markSize);
+    width: var(--markSize);
+    background-color: rgb(210, 105, 30);
+}
+
+.board.o .cell:not(.x):not(.o):hover::before,
+.board.o .cell:not(.x):not(.o):hover::after {
+    background-color: rgb(223, 223, 223);
+
+}
+
+.cell.o::after,
+.board.o .cell:not(.x):not(.o):hover::after {
+    height: calc(var(--markSize) * 0.69);
+    width: calc(var(--markSize) * 0.69);
+    background-color: white;
+    opacity: 0.5;
+}
+
+.cell.x,
+.cell.o {
+    cursor: not-allowed;
+}
+
+
+
+/*
+Note for how the hover effect works
+1- We'll set the class of board as X or O with js as per player turn 
+2- Then we'll give either an X or O hover effect over all cells -- excepts cells that are already filled
+for this, we'll use not() operator 
+*/
+
+
+
+
+/* Styling the winning message */
+#winningText {
+    width: 20rem;
+    height: 3rem;
+    justify-content: center;
+    text-align-last: center;
+    font-size: 200%;
+    margin-left: 2rem;
+    background-color: rgba(0, 0, 0, 0.371);
+    padding: 0.2rem 0.5rem;
+    border-radius: 15px;
+    box-shadow: 5px 5px 25px black;
+    border: 1px solid white;
+    opacity: 0;
+}
+
+.show {
+    animation: showMessage;
+    animation-duration: 1000ms;
+}
+
+@keyframes showMessage {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.50;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 0.50;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+/* Styling the scoreboard */
+
+#xIcon,
+#oIcon {
+    height: 2rem;
+    width: 2rem;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: black;
+    box-shadow: 2px 2px 5px black;
+    margin: 3px 10px;
+}
+
+.playerX,
+.playerO {
+    border-bottom: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0;
+    column-gap: 20px;
+}
+
+.playerX {
+    margin-top: 25px;
+    border-top: 2px solid white;
+}
+
+.scoreBoard {
+    font-weight: bold;
+    text-shadow: 1px 1px 25px white;
+    padding: 15px 20px 30px 20px;
+    display: flex;
+    flex-direction: column;
+    height: 12rem;
+    border: 1.5px solid white;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.19);
+    border-radius: 30px;
+    box-shadow: 3px 3px 9px black;
+    margin-right: 5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

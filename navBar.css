@@ -1,0 +1,181 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+
+}
+
+body {
+    margin: 0;
+    color: white;
+}
+
+
+
+
+
+.navBar {
+    display: flex;
+    column-gap: 26rem;
+    height: 4rem;
+    width: 100vw;
+    border-bottom: 2px solid white;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    font-size: 125%;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.401);
+}
+
+
+
+/* Styling the home and options menu and home icon */
+.options {
+    display: flex;
+    column-gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+#homeIcon {
+    position: relative;
+    top: 4px;
+    width: 2rem;
+    border: 2.5px solid white;
+    border-radius: 50%;
+    padding: 5px;
+    text-decoration: none;
+}
+
+
+
+/* Creating the night mode switch */
+body {
+    background-image: url(/imagesMain/background_day.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 300ms;
+}
+
+body.night {
+    background-image: url(/imagesMain/background_night.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body.night .board {
+    background-color: rgba(192, 192, 192, 0.308);
+}
+
+body.night .label {
+    box-shadow: 3px 3px 25px 3px rgba(255, 255, 255, 0.268);
+}
+
+body.night .rules {
+    box-shadow: 0px 3px 5px rgba(255, 255, 255, 0.268);
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox:checked + .label {
+    background: linear-gradient(to right, #000815, #082147,  #7D3FAC);
+}
+
+.checkbox:checked + .label .ball {
+    transform: translateX(1.4rem) rotate(180deg);
+
+}
+
+.label {
+    background: url('../imagesMain/dusk_switch.webp');
+    background-size: cover;
+    transition: 200ms linear;
+    height: 2rem;
+    width: 3.5rem;
+    display: flex;
+    align-items: center;
+    border-radius: 3.5rem;
+    padding: 5px;
+    border: 2.5px solid white;
+    box-shadow: 5px 5px 10px black;
+}
+.ball {
+    position: absolute;
+    height: 1.5rem;
+    width: 1.5rem;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 0;
+    background: url(/imagesMain/yin-yang-3.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform 1000ms;
+}
+
+
+
+
+
+
+
+
+
+/* Styling the rules button */
+.rules {
+    height: 2rem;
+    width: 4.5rem;
+    border-radius: 1rem;
+    padding: 5px 15px;
+    color: white;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.181);
+    border: 2.5px solid white;
+    box-shadow: 3px 3px 9px black;
+    opacity: 0.75;
+}
+
+.dropdown {
+    position: relative;
+    /* right: 27rem; */
+}
+
+.dropdownContent {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 1.5rem);
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    box-shadow: 0px 2px 5px 0 black;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-20px);
+    font-size: 0.9rem;
+    width: 21rem;
+    transition: opacity 200ms, transform 200ms;
+}
+
+li {
+    margin: 10px;
+}
+.dropdown.active > .rules + .dropdownContent {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.dropdown.active {
+    text-shadow: 3px 2px 6px black;
+    opacity: 1;
+}
+
+
+
+
