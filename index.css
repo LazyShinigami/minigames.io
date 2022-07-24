@@ -1,0 +1,169 @@
+/* .aboutSite {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 10%;
+} */
+
+.header {
+    /* background-color: rgba(0, 0, 0, 0.358); */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.309));
+    text-align: right;
+    padding: 3rem;
+    max-width: 30rem;
+    border-radius: 15px 0px 0px 15px;
+    /* position: absolute;
+    right: 0;
+    top: 25%; */
+}
+
+body.night div.header {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.469), rgba(255, 255, 255, 0.149));
+}
+
+.description {
+    line-height: 1.5;
+    text-shadow: 1px 1px 20px white;
+}
+
+
+
+
+
+
+
+
+
+.play, .credits, .socials {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    height: 5rem;
+    width: 10rem;
+    background-color: rgba(240, 128, 128, 0.834);
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px black;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 150ms;
+}
+
+.play:hover, .credits:hover, .socials:hover {
+    width: 10.5rem;
+    margin: 1rem 0.75rem;
+}
+
+.socialIcon {
+    height: 1.7rem;
+    width: 1.7rem;
+    margin: 0.5rem;
+    transition: 100ms;
+}
+.socialIcon:hover {
+    opacity: 0.6;
+    height: 1.9rem;
+    width: 1.9rem;
+    margin: 0.4rem;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+body.night .play, body.night .credits, body.night .socials{
+    background-color: rgba(135, 206, 250, 0.754);
+}
+
+
+.playerOptionAll {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: 19rem;
+    justify-content: center;
+    align-items: center;
+    /* position: absolute;
+    top: 20%;
+    left: 35%; */
+}
+
+.layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#dayNightSwitch {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+}
+
+
+@media (max-width: 500px) {
+    .layout {
+        padding: 0;
+        justify-content: flex-end;
+        margin-top: 5rem;
+        flex-direction: column-reverse;
+    }
+    .header {
+        box-shadow: 5px 5px 15px 5px black;
+        position: absolute;
+        right: 0;
+        margin: 1rem 0;
+        padding: 1.5rem;
+        max-width: 23rem;
+
+    }
+    .playerOptionAll {
+        position: absolute;
+        top: 20rem;
+    }
+}
+
+@media (max-width: 396px) {
+    .header {
+        box-shadow: 5px 5px 15px 5px black;
+        position: absolute;
+        right: 0;
+        margin: 1rem 0;
+        padding: 1rem;
+        max-width: 20rem;
+    }
+    .playerOptionAll {
+        position: absolute;
+        top: 18rem;
+    }
+}
+
+
+@media (min-width: 501px) {
+    .header {
+        box-shadow: 5px 5px 15px 5px black;
+        padding: 1.5rem 2rem 2rem 4rem;
+    }
+
+    .layout {
+        width: 100%;
+        justify-content: flex-end;
+        align-items: center;
+        column-gap: 6vw;
+        position: absolute;
+        right: 0;
+        top: 25vh;
+    }
+
+    .playerOptionAll {
+        position: relative;
+        margin-left: 2rem;
+    }
+}
+
+

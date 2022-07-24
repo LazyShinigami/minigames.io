@@ -1,3 +1,8 @@
+html {
+    font-size: 16px;
+}
+
+
 *,
 *::after,
 *::before {
@@ -11,61 +16,71 @@ body {
 }
 
 
-
-
-
 .navBar {
-    display: flex;
-    column-gap: 26rem;
-    height: 4rem;
-    width: 100vw;
-    border-bottom: 2px solid white;
-    padding: 1rem;
     position: sticky;
     top: 0;
+    background-color: rgba(0, 0, 0, 0.262);
+    display: flex;
+    width: 100%;
+    border-bottom: 2px solid white;
+    height: 4rem;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-    font-size: 125%;
-    font-weight: bold;
-    margin-bottom: 2rem;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.401);
+    gap: 1rem;
+    padding: 0.25rem 1.75rem 0 1.75rem;
 }
 
+/* changing the column gap of navbar elements */
+.navBar.game {
+    justify-content: center;
+    padding: 0;
+    gap: 0.5rem;
+}
 
+/* changing max width of heading for game pages as they don't need as much space */
+.game > .heading {
+    min-width: 9rem;
+    max-width: 12rem;
+}
 
-/* Styling the home and options menu and home icon */
+/* 1 */
 .options {
     display: flex;
-    column-gap: 20px;
     justify-content: center;
     align-items: center;
+    /* border: 3px solid red; */
+    gap: 10px;
+    max-width: fit-content;
+    position: absolute;
+    left: 5px;
 }
 
+
 #homeIcon {
-    position: relative;
-    top: 4px;
+    height: 2rem;
     width: 2rem;
-    border: 2.5px solid white;
+    border: 2px solid white;
     border-radius: 50%;
-    padding: 5px;
-    text-decoration: none;
+    box-shadow: 5px 5px 10px black;
 }
+
+
 
 
 
 /* Creating the night mode switch */
 body {
-    background-image: url(/imagesMain/background_day.jpg);
+    background-image: url(imagesMain/background_day.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     transition: 300ms;
 }
 
 body.night {
     background-image: url(/imagesMain/background_night.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+
 }
 
 body.night .board {
@@ -90,7 +105,7 @@ body.night .rules {
 }
 
 .checkbox:checked + .label .ball {
-    transform: translateX(1.4rem) rotate(180deg);
+    transform: translateX(65%) rotate(180deg);
 
 }
 
@@ -99,7 +114,7 @@ body.night .rules {
     background-size: cover;
     transition: 200ms linear;
     height: 2rem;
-    width: 3.5rem;
+    width: 3rem;
     display: flex;
     align-items: center;
     border-radius: 3.5rem;
@@ -109,8 +124,8 @@ body.night .rules {
 }
 .ball {
     position: absolute;
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 1.2rem;
+    width: 1.2rem;
     border: 2px solid white;
     border-radius: 50%;
     padding: 0;
@@ -128,12 +143,38 @@ body.night .rules {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 2 */
+.heading {
+    /* border: 2px solid black; */
+    min-width: 13.2rem;
+    max-width: 14rem;
+    text-align: center;
+    font-size: 120%;
+    font-weight: bold;
+}
+
+
+/* 3 */
 /* Styling the rules button */
 .rules {
     height: 2rem;
     width: 4.5rem;
     border-radius: 1rem;
-    padding: 5px 15px;
     color: white;
     font-weight: bold;
     background: rgba(0, 0, 0, 0.181);
@@ -148,17 +189,19 @@ body.night .rules {
 }
 
 .dropdownContent {
+    background: rgba(0, 0, 0, 0.321);
+    margin-top: 0.6rem;
     position: absolute;
     right: 0;
-    top: calc(100% + 1.5rem);
+    top: calc(80% + 1rem);
     padding: 0.25rem;
-    border-radius: 0.25rem;
+    border-radius: 10px;
     box-shadow: 0px 2px 5px 0 black;
     opacity: 0;
     pointer-events: none;
     transform: translateY(-20px);
     font-size: 0.9rem;
-    width: 21rem;
+    min-width: 23rem;
     transition: opacity 200ms, transform 200ms;
 }
 
@@ -178,4 +221,36 @@ li {
 
 
 
+
+.rulesContainer {
+    position: absolute;
+    right: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Fucking around with media queries */
+/* Styling nav bar for devices with viewport less than 400px -- necessary as the options menu overlapped the heading*/
+@media (max-width: 400px) {
+    .navBar.home > .heading {
+        margin-left: 5em;
+    }
+    .dropdownContent {
+        min-width: 20rem;
+    }
+}
 
