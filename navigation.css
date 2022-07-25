@@ -79,7 +79,7 @@ body {
 }
 
 body.night {
-    background-image: url(/imagesMain/background_night.jpg);
+    background-image: url(imagesMain/background_night.jpg);
 
 }
 
@@ -110,7 +110,7 @@ body.night .rules {
 }
 
 .label {
-    background: url('../imagesMain/dusk_switch.webp');
+    background: url(imagesMain/dusk_switch.webp);
     background-size: cover;
     transition: 200ms linear;
     height: 2rem;
@@ -129,7 +129,7 @@ body.night .rules {
     border: 2px solid white;
     border-radius: 50%;
     padding: 0;
-    background: url(/imagesMain/yin-yang-3.png);
+    background: url(imagesMain/yin-yang-3.png);
     background-repeat: no-repeat;
     background-size: contain;
     transition: transform 1000ms;
