@@ -55,7 +55,7 @@ function clickCheck(e) {
     else if (checkDraw()) {
         endGame = true
         console.log("Draw");
-        winningText.textContent = "Draw! Let's try again!"
+        winningText.textContent = "Draw! LTry again!"
         winningText.classList.add("show")
         setTimeout(() => {
             winningText.classList.remove("show")

@@ -30,11 +30,6 @@ body.night div.header {
 
 
 
-
-
-
-
-
 .play, .credits, .socials {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
@@ -50,6 +45,9 @@ body.night div.header {
     justify-content: center;
     align-items: center;
     transition: 150ms;
+}
+.socials {
+    padding: 2rem 0;
 }
 
 .play:hover, .credits:hover, .socials:hover {
@@ -87,9 +85,6 @@ body.night .play, body.night .credits, body.night .socials{
     height: 19rem;
     justify-content: center;
     align-items: center;
-    /* position: absolute;
-    top: 20%;
-    left: 35%; */
 }
 
 .layout {
