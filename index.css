@@ -152,9 +152,6 @@ body.night .play, body.night .credits, body.night .socials{
 
 
 @media (min-width: 1000px) {
-    .play {
-        color: red;
-    }
     .header {
         font-size: 150%;
         padding: 4.5rem;

@@ -18,3 +18,31 @@ document.addEventListener("click", e => {
         dropdown.classList.remove("active")
     })
 })
+
+
+// Styling a sticky navigation bar that changes background on scroll
+
+const navBar = document.querySelector(".navBar") // navigation bar
+let isDesktop = window.innerWidth
+if (isDesktop > 999) {
+    isDesktop = true
+} else {
+    isDesktop = false
+}
+const emptyArea = document.querySelector(".emptyArea") // rest of the code of the page
+const emptyAreaObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            navBar.classList.add("navBarScrolled")
+        } else {
+            navBar.classList.remove("navBarScrolled")
+        }
+    })
+}, 
+{
+    threshold: 0,
+    rootMargin: (isDesktop === true) ? "-80px" : "-100px"    
+})
+emptyAreaObserver.observe(emptyArea)
+
+

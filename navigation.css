@@ -15,8 +15,12 @@ body {
     color: white;
 }
 
+.emptyArea {
+    height: 4rem;
+}
 
 .navBar {
+    z-index: 2;
     position: sticky;
     top: 0;
     background-color: rgba(0, 0, 0, 0.262);
@@ -26,9 +30,21 @@ body {
     height: 4rem;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
     padding: 0.25rem 1.75rem 0 1.75rem;
+    transition: 500ms;
 }
+
+.navBarScrolled {
+    background: linear-gradient(to right, rgb(196,91,137), rgb(239,103,123), rgb(196,91,137));
+}
+
+.night .navBarScrolled {
+    background: linear-gradient(to right, rgb(12, 65, 94), rgba(22, 119, 172, 0.996), rgb(12, 65, 94));
+}
+
+
+
+
 
 /* changing the column gap of navbar elements */
 .navBar.game {
@@ -38,7 +54,7 @@ body {
 }
 
 /* changing max width of heading for game pages as they don't need as much space */
-.game > .heading {
+.game .heading {
     min-width: 9rem;
     max-width: 12rem;
 }
@@ -48,7 +64,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 3px solid red; */
     gap: 10px;
     max-width: fit-content;
     position: absolute;
@@ -162,7 +177,7 @@ body.night .rules {
 .heading {
     /* border: 2px solid black; */
     min-width: 13.2rem;
-    max-width: 14rem;
+    max-width: auto;
     text-align: center;
     font-size: 120%;
     font-weight: bold;
@@ -253,4 +268,48 @@ li {
         min-width: 20rem;
     }
 }
+@media (min-width: 1000px) {
+    #homeIcon {
+        height: 3rem;
+        width: 3rem;
+        border: 2px solid white;
+    }
+    .checkbox:checked + .label .ball {
+        transform: translateX(93%) rotate(180deg);
+    }
+    
+    .label {
+        height: 2.8rem;
+        width: 5rem;
+        padding: 5px;
+    }
+
+    .ball {
+        height: 2.1rem;
+        width: 2.1rem;
+    }
+    .heading {
+        font-size: 175%;
+    }
+
+
+
+    .rules {
+        font-size: 150%;
+        height: 2.8rem;
+        width: 6.75rem;
+        border-radius: 1.5rem;
+        border: 3.5px solid white;
+
+    }
+
+    .dropdownContent {
+        font-size: 120%;
+        min-width: 30rem;
+    }
+
+    
+}
+
+
 

@@ -176,9 +176,8 @@ for this, we'll use not() operator
     width: 20rem;
     height: 3rem;
     justify-content: center;
-    text-align-last: center;
+    text-align: center;
     font-size: 200%;
-    /* margin-left: 2rem; */
     background-color: rgba(0, 0, 0, 0.371);
     padding: 0.2rem 0.5rem;
     border-radius: 15px;
@@ -221,7 +220,6 @@ for this, we'll use not() operator
 
 
 /* Styling the scoreboard */
-
 #xIcon,
 #oIcon {
     height: 2rem;
@@ -273,9 +271,96 @@ for this, we'll use not() operator
     }
 }
 
+@media (min-width: 1000px) {
+    .main {
+        margin-top: 5%;
+        column-gap: 5rem;
+    }
+
+    #xIcon,
+    #oIcon {
+        height: 2.5rem;
+        width: 2.5rem;
+        margin: 3px 10px;
+    }
+
+    .playerX,
+    .playerO {
+        padding: 10px 5px;
+        column-gap: 20px;
+    }
+
+    .playerX {
+        margin-top: 15px;
+    }
+
+    .playerO {
+        margin-bottom: 10px;
+    }
+
+    .scoreBoard {
+        font-size: 125%;
+        padding: 15px 0px 30px 0px;
+        height: 15rem;
+        width: 15rem;
+    }
 
 
 
+    .board {
+        width: 27rem;
+        height: 27rem;
+    }
+    
+    .cell {
+        width: calc(var(--cellSize) * 1.5);
+        height: calc(var(--cellSize) * 1.5);
+    }
+
+
+    .cell {
+        user-select: none;
+    }
+
+    /* The X */
+    .cell.x::before,
+    .cell.x::after {
+        height: calc(var(--markSize) * 1.5);
+        width: calc(calc(var(--markSize) * 0.15) * 1.5);
+    }
+
+    .board.x .cell:not(.x):not(.o):hover::before,
+    .board.x .cell:not(.x):not(.o):hover::after {
+        height: calc(var(--markSize) * 1.5);
+        width: calc(calc(var(--markSize) * 0.15) * 1.5);
+    }
+
+
+    
+    /* The O */
+    .cell.o::before,
+    .board.o .cell:not(.x):not(.o):hover::before {
+        height: calc(var(--markSize) * 1.5);
+        width: calc(var(--markSize) * 1.5);
+    }
+
+    .cell.o::after,
+    .board.o .cell:not(.x):not(.o):hover::after {
+        height: calc(calc(var(--markSize) * 0.69) * 1.5);
+        width: calc(calc(var(--markSize) * 0.69) * 1.5);
+    }
+
+
+    #winningText {
+        width: 27rem;
+        height: 4.5rem;
+        font-size: 300%;
+        padding: 0.5rem 1rem;
+    }
+    
+
+
+}
 
 
 
