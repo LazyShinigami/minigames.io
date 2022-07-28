@@ -41,12 +41,14 @@ INDEX
     background: rgba(0, 0, 0, 0.394);
 }
 
-.win, .lose, .draw {
+.win,
+.lose,
+.draw {
     border-top: 2px solid white;
     padding: 0.5rem;
     display: grid;
     grid-template-columns: 9rem 1rem;
-    
+
 }
 
 .win {
@@ -70,6 +72,7 @@ INDEX
     align-items: center;
     /* column-gap: calc(100% - 16em - 8px + 2em); 6 px taking into account 2px + 2px -- border of icon and 2px -- border right of the container and finally 2px to account for overlapping border */
 }
+
 .choice {
     position: absolute;
     width: 8rem;
@@ -81,13 +84,14 @@ INDEX
 }
 
 .user {
-    left:  100px;
+    left: 100px;
 }
+
 .comp {
     right: 100px;
 }
 
-.choice > span {
+.choice>span {
     font-size: 2rem;
     margin-bottom: 10px;
     font-weight: bold;
@@ -118,10 +122,12 @@ body.night .playIcon {
     from {
         opacity: 1;
     }
+
     90% {
         opacity: 0.2;
         background: rgba(255, 82, 82, 0.871);
     }
+
     to {
         opacity: 1;
     }
@@ -137,10 +143,12 @@ body.night .playIcon {
     from {
         opacity: 1;
     }
+
     90% {
         opacity: 0.2;
         background: rgba(128, 128, 128, 0.802);
     }
+
     to {
         opacity: 1;
     }
@@ -179,7 +187,7 @@ body.night .userOptions {
     padding: 1rem;
 }
 
-.choiceIcons > * {
+.choiceIcons>* {
     height: 2em;
     width: 2em;
     border: 2px solid white;
@@ -198,15 +206,15 @@ body.night .userOptions {
     font-weight: bold;
 }
 
-.versus > * {
+.versus>* {
     opacity: 0;
 }
 
 .v.active {
     color: lightcoral;
-    text-shadow:2px 2px 5px rgb(142, 79, 79);
+    text-shadow: 2px 2px 5px rgb(142, 79, 79);
     position: relative;
-    
+
     animation-name: vSign;
     animation-duration: 1250ms;
     opacity: 0;
@@ -217,10 +225,12 @@ body.night .userOptions {
         opacity: 0;
         left: -100px;
     }
+
     70% {
         opacity: 1;
         left: 0px;
     }
+
     to {
         opacity: 0;
         left: 70px;
@@ -246,11 +256,13 @@ body.night .userOptions {
         left: 70px;
         top: -100px;
     }
+
     70% {
         opacity: 1;
         left: 0px;
         top: 0px;
     }
+
     to {
         opacity: 0;
         left: -70px;
@@ -274,10 +286,12 @@ body.night .userOptions {
         opacity: 0;
         left: 100px;
     }
+
     70% {
         opacity: 1;
         left: 0px;
     }
+
     to {
         opacity: 0;
         left: -70px;
@@ -300,17 +314,21 @@ body.night .userOptions {
         position: relative;
         top: -10rem;
     }
+
     .user {
-        left:  10px;
+        left: 10px;
         top: 40%;
     }
+
     .comp {
         right: 10px;
         top: 95%;
     }
+
     .userOptions {
         font-size: 1.3rem;
     }
+
     .emptyArea {
         height: 0;
     }
@@ -322,11 +340,14 @@ body.night .userOptions {
         padding: 0.5rem 0.75rem;
         width: 11rem;
     }
+
     .scoreBoardTitle {
         font-size: 2rem;
     }
 
-    .win, .lose, .draw {
+    .win,
+    .lose,
+    .draw {
         padding: 0.4rem;
         grid-template-columns: 6rem 1rem;
     }
@@ -339,7 +360,7 @@ body.night .userOptions {
         font-size: 1.2rem;
     }
 
-    .choiceIcons > * {
+    .choiceIcons>* {
         height: 2.3em;
         width: 2.3em;
     }
@@ -349,56 +370,29 @@ body.night .userOptions {
         position: relative;
         top: 75%;
     }
+
     .playIcon {
         height: 8em;
         width: 8em;
     }
 }
 
-@media (max-width: 750px) and (min-width: 501px){
+@media (max-width: 750px) and (min-width: 501px) {
     .user {
-        left:  50px;
+        left: 50px;
     }
+
     .comp {
         right: 50px;
     }
+
     .playIcon {
         height: 11em;
         width: 11em;
         margin-bottom: 20px;
     }
+
     .versus {
         font-size: 4rem;
     }
 }
-/* @media (min-width: 900px) {
-    .scoreBoard {
-        color: black;
-    }
-    .userOptions {
-        font-size: 2rem;
-    }
-
-    .scoreBoard {
-        position: relative;
-        top: -3rem;
-        padding: 1rem 1.5rem;
-        width: 15rem;
-    }
-
-    .win, .lose, .draw {
-        padding: 0.4rem;
-        grid-template-columns: 9rem 1rem;
-    }
-
-    .win {
-        margin-top: 0.5rem;
-    }
-
-    .scoreBoardTitle {
-        font-size: 2rem;
-    }
-}
- */
-
-

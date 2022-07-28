@@ -29,15 +29,15 @@ let compChoice
 //giving loser animation to whoever loses
 const player = document.querySelector(".userChoice")
 const computer = document.querySelector(".compChoice")
-    
-    
+
+
 function versusEffect() {
     optionsAll.forEach(e => {
         e.removeEventListener("click", versusEffect)
     })
     playerChoice = this.id
     compChoice = generateCompChoice()
-    console.log(playerChoice);
+    // console.log(playerChoice);
     if (playerChoice === "rock") {
         player.src = "images/hRock.svg"
     } else if (playerChoice === "paper") {
@@ -65,7 +65,7 @@ function versusEffect() {
         e.classList.add("active")
     })
 
-    
+
     setTimeout(checkWin, 1250)
     setTimeout(() => {
         versus.forEach(e => {
@@ -74,7 +74,7 @@ function versusEffect() {
         optionsAll.forEach(e => {
             e.addEventListener("click", versusEffect)
         })
-        
+
     }, 2500)
 }
 
@@ -98,7 +98,7 @@ function checkWin() {
     const drawScore = document.getElementById("draw")
 
     // Main scripting
-    
+
     // console.log(playerChoice, "--", compChoice);
     if (playerChoice === compChoice) {
         draw++
