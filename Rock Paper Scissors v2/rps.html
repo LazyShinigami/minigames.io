@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="rps.css">
+    <link rel="stylesheet" href="../navigation.css">
+    <title>Rock-Paper-Scissors</title>
+</head>
+<body id="body">
+    <nav class="navBar game" id="navBar">
+        <div class="options">
+            <a href="../home/home.html"><img id="homeIcon" src="../imagesMain/home.jpg" alt="home icon"></a>
+
+            <div id="dayNightSwitch">
+                <input type="checkbox" class="checkbox" id="checkbox">
+                <label for="checkbox" class="label">
+                    <span class="ball"></span>
+                </label>
+            </div>
+        </div>
+        
+
+        <div class="heading">Rock-Paper-Scissors!</div>
+
+        <div class="rulesContainer">
+            <div class="dropdown" data-dropdown>
+                <button class="rules" data-dropdownButton>Rules</button>
+                <div class="dropdownContent">
+                    <li>Pick an option from the given choices.</li>
+                    <li>Loser's tile gets red.</li>
+                    <li>In case of a draw, both tiles get grayed out.</li>
+                </div>
+            </div>
+        </div>       
+    </nav>
+    <section class="emptyArea"></section>
+
+    <div class="main">
+        <!-- 1 -->
+        <div class="scoreBoard">
+            <span class="scoreBoardTitle">Score Board</span>
+            <span class="win"><span class="result">Win </span><span class="score" id="win">0</span></span>
+            <span class="lose"><span class="result">Lose </span><span class="score" id="lose">0</span></span>
+            <span class="draw"><span class="result">Draw </span><span class="score" id="draw">0</span></span>
+        </div>
+
+         
+
+        <!-- 2 -->
+        <div class="choicesBox">
+            <div class="choice user">
+                <span class="playerTag">Player</span>
+                <img src="images/question" alt="Player Choice" class="userChoice playIcon">
+            </div>
+
+            <div class="versus">
+                <div class="v">V</div>
+                <div class="slash">/</div>
+                <div class="s">S</div>
+            </div>
+
+            <div class="choice comp">
+                <span class="playerTag">Computer</span>
+                <img src="images/question" alt="Computer Choice" class="compChoice playIcon">
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="userOptions">
+            <span class="offerChoice">Pick One</span>
+            <div class="choiceIcons">
+                <img src="images/stone.png" alt="rock" id="rock">
+                <img src="images/paper.png" alt="paper" id="paper">
+                <img src="images/scissor.png" alt="scissor" id="scissor">
+            </div>
+            
+        </div>
+    </div>
+    
+    <script src="rps.js"></script>
+    <script src="../navBar.js"></script>
+</body>
+</html>

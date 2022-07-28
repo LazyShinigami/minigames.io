@@ -55,8 +55,7 @@ body {
 
 /* changing max width of heading for game pages as they don't need as much space */
 .game .heading {
-    min-width: 9rem;
-    max-width: 12rem;
+    width: fit-content;
 }
 
 /* 1 */

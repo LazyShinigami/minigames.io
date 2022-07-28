@@ -1,0 +1,404 @@
+@media (max-width: 400px) {
+    .heading {
+        position: relative;
+        left: 0.7rem;
+    }
+}
+
+/*
+INDEX
+- main div
+- Score Board
+- Player and Computer choices
+- User Options
+- Versus animation
+- Media Queries
+*/
+
+/* Main div */
+.main {
+    /* border: 2px solid green; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+}
+
+
+/* Styling the  Score Board */
+
+.scoreBoard {
+    font-weight: bold;
+    font-size: 2rem;
+    border-radius: 20px;
+    padding: 1rem 1.5rem;
+    border: 2px solid rgb(255, 255, 255);
+    width: 15rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.394);
+}
+
+.win, .lose, .draw {
+    border-top: 2px solid white;
+    padding: 0.5rem;
+    display: grid;
+    grid-template-columns: 9rem 1rem;
+    
+}
+
+.win {
+    margin-top: 1rem;
+}
+
+.scoreBoardTitle {
+    font-size: 2rem;
+}
+
+
+
+
+/* Player and Computer choices */
+.choicesBox {
+    width: 100vw;
+    padding: 1rem 0;
+    display: flex;
+    height: 12rem;
+    justify-content: center;
+    align-items: center;
+    /* column-gap: calc(100% - 16em - 8px + 2em); 6 px taking into account 2px + 2px -- border of icon and 2px -- border right of the container and finally 2px to account for overlapping border */
+}
+.choice {
+    position: absolute;
+    width: 8rem;
+    /* border: 2px solid white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user {
+    left:  100px;
+}
+.comp {
+    right: 100px;
+}
+
+.choice > span {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    /* border: 2px solid red; */
+}
+
+
+.playIcon {
+    height: 15em;
+    width: 15em;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.388);
+    border: 1px solid white;
+}
+
+
+body.night .playIcon {
+    background-color: rgba(255, 255, 255, 0.459);
+}
+
+.playIcon.loser {
+    animation-name: loser;
+    animation-duration: 800ms;
+    animation-timing-function: ease-out;
+}
+
+@keyframes loser {
+    from {
+        opacity: 1;
+    }
+    90% {
+        opacity: 0.2;
+        background: rgba(255, 82, 82, 0.871);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.playIcon.draw {
+    animation-name: draw;
+    animation-duration: 800ms;
+    animation-timing-function: ease-out;
+}
+
+@keyframes draw {
+    from {
+        opacity: 1;
+    }
+    90% {
+        opacity: 0.2;
+        background: rgba(128, 128, 128, 0.802);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+/* User Options */
+.userOptions {
+    /* border: 2px solid blue; */
+    font-weight: bold;
+    padding: 0.5rem 1rem 0 1rem;
+    display: flex;
+    row-gap: 0.75rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 150%;
+    background: rgba(0, 0, 0, 0.404);
+}
+
+body.night .userOptions {
+    background: radial-gradient(rgba(0, 0, 0, 0.739), rgba(255, 255, 255, 0.329));
+
+}
+
+.choiceIcons {
+    display: flex;
+    column-gap: 1.5rem;
+    border-top: 2px solid white;
+    padding: 1rem;
+}
+
+.choiceIcons > * {
+    height: 2em;
+    width: 2em;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+
+
+/* Versus animation */
+.versus {
+    display: flex;
+    column-gap: 0.5rem;
+    font-size: 5rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.versus > * {
+    opacity: 0;
+}
+
+.v.active {
+    color: lightcoral;
+    text-shadow:2px 2px 5px rgb(142, 79, 79);
+    position: relative;
+    
+    animation-name: vSign;
+    animation-duration: 1250ms;
+    opacity: 0;
+}
+
+@keyframes vSign {
+    from {
+        opacity: 0;
+        left: -100px;
+    }
+    70% {
+        opacity: 1;
+        left: 0px;
+    }
+    to {
+        opacity: 0;
+        left: 70px;
+    }
+}
+
+
+
+.slash.active {
+    color: grey;
+    opacity: 1;
+    position: relative;
+
+    animation-name: slashSign;
+    animation-duration: 1250ms;
+    opacity: 0;
+}
+
+
+@keyframes slashSign {
+    from {
+        opacity: 0;
+        left: 70px;
+        top: -100px;
+    }
+    70% {
+        opacity: 1;
+        left: 0px;
+        top: 0px;
+    }
+    to {
+        opacity: 0;
+        left: -70px;
+        top: 100px;
+    }
+}
+
+
+.s.active {
+    color: rgb(166, 219, 219);
+    text-shadow: 1px 1px 2px rgb(62, 81, 81);
+    position: relative;
+
+    animation-name: sSign;
+    animation-duration: 1250ms;
+    opacity: 0;
+}
+
+@keyframes sSign {
+    from {
+        opacity: 0;
+        left: 100px;
+    }
+    70% {
+        opacity: 1;
+        left: 0px;
+    }
+    to {
+        opacity: 0;
+        left: -70px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Media Queries */
+@media (max-width: 500px) {
+    .choicesBox {
+        height: 15rem;
+        position: relative;
+        top: -10rem;
+    }
+    .user {
+        left:  10px;
+        top: 40%;
+    }
+    .comp {
+        right: 10px;
+        top: 95%;
+    }
+    .userOptions {
+        font-size: 1.3rem;
+    }
+    .emptyArea {
+        height: 0;
+    }
+
+    .scoreBoard {
+        position: relative;
+        top: -3rem;
+        font-size: 1rem;
+        padding: 0.5rem 0.75rem;
+        width: 11rem;
+    }
+    .scoreBoardTitle {
+        font-size: 2rem;
+    }
+
+    .win, .lose, .draw {
+        padding: 0.4rem;
+        grid-template-columns: 6rem 1rem;
+    }
+
+    .win {
+        margin-top: 0.5rem;
+    }
+
+    .scoreBoardTitle {
+        font-size: 1.2rem;
+    }
+
+    .choiceIcons > * {
+        height: 2.3em;
+        width: 2.3em;
+    }
+
+    .versus {
+        font-size: 3rem;
+        position: relative;
+        top: 75%;
+    }
+    .playIcon {
+        height: 8em;
+        width: 8em;
+    }
+}
+
+@media (max-width: 750px) and (min-width: 501px){
+    .user {
+        left:  50px;
+    }
+    .comp {
+        right: 50px;
+    }
+    .playIcon {
+        height: 11em;
+        width: 11em;
+        margin-bottom: 20px;
+    }
+    .versus {
+        font-size: 4rem;
+    }
+}
+/* @media (min-width: 900px) {
+    .scoreBoard {
+        color: black;
+    }
+    .userOptions {
+        font-size: 2rem;
+    }
+
+    .scoreBoard {
+        position: relative;
+        top: -3rem;
+        padding: 1rem 1.5rem;
+        width: 15rem;
+    }
+
+    .win, .lose, .draw {
+        padding: 0.4rem;
+        grid-template-columns: 9rem 1rem;
+    }
+
+    .win {
+        margin-top: 0.5rem;
+    }
+
+    .scoreBoardTitle {
+        font-size: 2rem;
+    }
+}
+ */
+
+
